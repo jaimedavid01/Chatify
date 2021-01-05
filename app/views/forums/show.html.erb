@@ -1,0 +1,10 @@
+
+
+
+
+<% @album.forums.each do |forum| %>
+    <% forum.messages.each do |message| %>
+        <%= message.comment %>
+        <br>
+    <% end %>
+<% end %>

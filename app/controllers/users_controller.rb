@@ -14,10 +14,10 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = user.create(user_params)
+        @user = User.create(user_params)
         
         if @user.valid?
-            session[:user_id] = user.id
+            session[:user_id] = @user.id
             redirect_to user_path(@user)
         else 
             flash[:error] = @user.errors.full_messages
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
     def update
 
-        @user = user.find(params[:id])
+        @user = User.find(params[:id])
  
          if @user.update(user_params)
              redirect_to user_path(@user)
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
      end
  
      def destroy
-         @user = user.find(params[:id])
+         @user = User.find(params[:id])
          @user.destroy
          redirect_to users_path
      end
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:name, :age, :username, :password_digest)
+        params.require(:user).permit(:name, :age, :username, :password)
 
     end
 

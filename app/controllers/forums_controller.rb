@@ -3,7 +3,7 @@ class ForumsController < ApplicationController
     def new 
         @forum = Forum.new
 
-        @movies = Movie.all
+        @albums = Album.all
         @users = User.all
     end
 
@@ -16,7 +16,7 @@ class ForumsController < ApplicationController
     private
 
     def forum_params
-        params.require(:forum).permit(:movie_id)
+        params.require(:forum).permit(:forum_id)
     end
     
 end
