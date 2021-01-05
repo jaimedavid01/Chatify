@@ -20,13 +20,14 @@ nirvana = Album.create(title: "Nevermind", release_year: "1991", genre: "Rock", 
 
 
 
-User.create(name: Faker::Name.name, username: Faker::Twitter.screen_name, age: rand(1..100))
-User.create(name: Faker::Name.name, username: Faker::Twitter.screen_name, age: rand(1..100))
-User.create(name: Faker::Name.name, username: Faker::Twitter.screen_name, age: rand(1..100))
+User.create(name: Faker::Name.name, username: Faker::Twitter.screen_name, age: rand(1..100), password: "123")
+User.create(name: Faker::Name.name, username: Faker::Twitter.screen_name, age: rand(1..100), password: "123")
+User.create(name: Faker::Name.name, username: Faker::Twitter.screen_name, age: rand(1..100), password: "123")
+User.create(name: "Boy", username: "Boy1", age: rand(1..100), password: "123")
 
-20.times do 
-    User.create(name: Faker::Name.name, username: Faker::Twitter.screen_name, age: rand(1..100))
-end
+# 20.times do 
+#     User.create(name: Faker::Name.name, username: Faker::Twitter.screen_name, age: rand(1..100))
+# end
 
 
 # 50.times do 

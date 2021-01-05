@@ -27,7 +27,7 @@ class ForumsController < ApplicationController
     private
 
     def forum_params
-        params.require(:forum).permit(:forum_id)
+        params.require(:forum).permit(:album_id)
     end
     
 end
