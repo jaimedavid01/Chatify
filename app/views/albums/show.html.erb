@@ -6,13 +6,21 @@
 <img src="<%= @album.img_url %>" alt="<%= @album.title %>">
 
 
-
+<% comment_count = 0 %>
 <% @album.forums.each do |forum| %>
     <% forum.messages.each do |message| %>
-        <%= message.comment %>
-        <br>
+        <% if message.comment  %>
+          <% comment_count += 1%>
+        <% end %>
     <% end %>
 <% end %>
 
+<h3>Currently <%= comment_count %> people have discussed <%= @album.title %>!</h3>
 
+
+
+<%= link_to 'Join The Conversation', forum_path(@forum) %>
+
+<%# link_to 'Scientist Lists', scientists_path %>
+<%# button_to 'Delete Scientists', scientist_path(@scientist), method: :delete %><br>
 

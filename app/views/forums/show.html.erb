@@ -1,10 +1,12 @@
 
+<img src="<%= @forum.album.img_url %>" alt="<%= @forum.album.title %>">
+<h1><%= @forum.album.title %></h1>
+<p><%= @forum.album.genre %></p>
 
 
 
-<% @album.forums.each do |forum| %>
-    <% forum.messages.each do |message| %>
+
+    <% @forum.messages.each do |message| %>
         <%= message.comment %>
         <br>
     <% end %>
-<% end %>

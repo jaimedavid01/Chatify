@@ -2,10 +2,10 @@ class SessionsController < ApplicationController
     skip_before_action :authorized?, only: [:new, :create]
   
     def reset_page_visits
-      # cookies[:page_visits] = nil
+      cookies[:page_visits] = nil
       session.delete(:page_visits)
       
-      redirect_back fallback_location: movies_path
+      redirect_back fallback_location: albums_path
     end 
     
     def logout 
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
     end 
   
     def create 
-      user = User.find_by(user_name: params[:session][:user_name])
+      user = User.find_by(username: params[:session][:username])
   
       if user && user.authenticate(params[:session][:password]) 
         session[:user_id] = user.id
