@@ -1,4 +1,7 @@
 <div>
+<%= button_to 'View Albums', albums_path, method: :get %><br>
+<%= button_to 'Discussion Rooms', forums_path, method: :get %><br>
+<%= button_to 'Main Menu', user_path(@user), method: :get %><br>
 
     <div class="profile-info">
         <% if flash[:error] %>
@@ -26,4 +29,8 @@
     <% else %>
         <h2>Albums Discussed by <%= @user.username %></h2>
     <% end %>
+
+
+
 </div>
+
