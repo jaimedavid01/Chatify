@@ -1,0 +1,26 @@
+<div>
+
+    <div class="profile-info">
+        <% if flash[:error] %>
+        <p><%= flash[:error] %></p>
+        <% end %>
+
+
+        <h2><%= @user.name %>'s Personal Homepage</h2>
+        <p>Age: <%= @user.age %></p>
+        <p>Username: <%= @user.username %></p>
+    </div>
+
+    <div class="forums-list">
+        <h2>Albums Discussed by <%= @user.username %></h2>
+        <div class="forums-list-albums">
+            <% @users.albums.each do |album| %>
+                <div class="show-tile">
+                    <a href="<%= album_path(album) %>">
+                        <img class="index-img" src="<%= album.img_url %>" alt="<%= album.title %>">
+                    </a>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

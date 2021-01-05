@@ -3,4 +3,15 @@
 <h1><%= album[:category] %></h1>
 
 <div class='index-container'>
-<% album{%>
+<% @albums.each do |album|%>
+
+<div class='index-title'>
+<a href="<%= album_path(movie) %>">
+<img class="index-img" src="<%= movie.img_url %>" alt="<%= movie.title%>">
+</a>
+
+</div>
+<% end %>
+</div>
+<% end %>
+
