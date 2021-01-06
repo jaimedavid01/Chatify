@@ -1,35 +1,51 @@
 <div>
+    <% if @user != @current_user %>
+        <h2>Profile for: <%= @user.username %></h2>
 
-<%= button_to 'Edit Profile', edit_user_path, method: :get %><br>
-
-
-    <div class="profile-info">
-        <% if flash[:error] %>
-        <p><%= flash[:error] %></p>
-        <% end %>
-
-
-        <h2>Welcome <%= @user.name %>!</h2>
-        <p>Username: <%= @user.username %></p>
-    </div>
-    <% if @user.albums != nil %>
         <div class="forums-list">
-            <h2>Albums You've Reviewed:</h2>
-            <div class="forums-list-albums">
-                <% @user.albums.each do |album| %>
-                    <div class="show-tile">
-                        <a href="<%= album_path(album) %>">
-                            <img class="index-img" src="<%= album.img_url %>" alt="<%= album.title %>">
-                        </a>
+                    <h3>Albums Reviewed by <%= @user.username %></h3>
+                    <div class="forums-list-albums">
+                        <% @user.albums.each do |album| %>
+                            <div class="show-tile">
+                                <a href="<%= album_path(album) %>">
+                                    <img class="index-img" src="<%= album.img_url %>" alt="<%= album.title %>">
+                                </a>
+                            </div>
+                        <% end %>
                     </div>
-                <% end %>
-            </div>
-        </div>
+                </div>
     <% else %>
-        <h2>Albums Discussed by <%= @user.username %></h2>
+        <%= button_to 'Edit Profile', edit_user_path, method: :get %><br>
+
+
+            <div class="profile-info">
+                <% if flash[:error] %>
+                <p><%= flash[:error] %></p>
+                <% end %>
+
+
+                <h2>Welcome <%= @user.name %>!</h2>
+                <p>Username: <%= @user.username %></p>
+            </div>
+            <% if @user.albums.count != 0 %>
+                <div class="forums-list">
+                    <h3>Albums You've Reviewed:</h3>
+                    <div class="forums-list-albums">
+                        <% @user.albums.each do |album| %>
+                            <div class="show-tile">
+                                <a href="<%= album_path(album) %>">
+                                    <img class="index-img" src="<%= album.img_url %>" alt="<%= album.title %>">
+                                </a>
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+            <% else %>
+                <h3> You Haven't Reveiwed Any Albums Yet!</h3>
+                <h3> Click <%= link_to 'HERE', albums_path %> to Write Your First Review!</h3>
+            <% end %>
+
+
     <% end %>
-
-
-
 </div>
 

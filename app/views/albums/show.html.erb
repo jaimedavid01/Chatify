@@ -1,18 +1,36 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <style>
 
+h2 {
+  text-align: left;
+  white-space: wrap;
+  margin: 0;
+  padding: 0;
+  
+}
+
+h3 {
+  text-align: right;
+  white-space: wrap;
+  margin: 0;
+  padding: 0;
+ 
+}
+
 .parent {
 display: grid;
-grid-template-columns: repeat(4, 1fr);
+grid-template-columns: repeat(5, 1fr);
 grid-template-rows: repeat(4, 1fr);
 grid-column-gap: 0px;
 grid-row-gap: 0px;
 }
 
-.div1 { grid-area: 1 / 2 / 2 / 4; }
-.div2 { grid-area: 2 / 2 / 3 / 4; }
+.div1 { grid-area: 1 / 2 / 3 / 5; }
+.div2 { grid-area: 3 / 2 / 4 / 5; }
 
 .center {
   margin: auto;
@@ -31,11 +49,15 @@ img {
 #overflowTest {
   background: 0;
   color: white;
-  padding: 15px;
+  padding: 0px;
   width: 100%;
-  height: 200px;
+  height: 400px;
   overflow: scroll;
   border: 0px solid #ccc;
+  white-space: wrap;
+  margin: 0;
+  padding: 0;
+
 }
 </style>
 </head>
@@ -57,24 +79,24 @@ img {
 <div class="div1" id="overflowTest"> 
 
 <% @album.messages.each do |message| %>
-  <p><%= message.user.username %></p>
-  <p class="<%= message.mood %>"> <%= message.content %></p>
-    <% message.comments.each do |comment| %>
-      <p><%= comment.user.username %></p>
-      <p style="background-color: yellow;"> <%= comment.content %></p>
+  <h2><p><%= link_to message.user.username, user_path(message.user) %></p></h2>
+  <h2 class="<%= message.mood %>"> <%= message.content %></h2>
+    <h2><% message.comments.each do |comment| %></h2>
+      <h3><%= comment.user.username %></h3>
+     <h3 style="background-color: grey;"> <%= comment.content %></h3>
     <% end %>
 
     <div class='form-container'>
       <% if flash[:error] %>
         <p><%= flash[:error] %></p>
       <% end %>
-      <%= form_for @comment do |f| %>
-        <%= f.label :content %>
-        <%= f.text_field :content %>
-        <br>
-        <%= f.hidden_field :message_id, value: message.id %>
+      <h3><%= form_for @comment do |f| %></h3>
+        <h3><%= f.label :content %></h3>
+        <h3><%= f.text_field :content %></h3>
+
+       <h3> <%= f.hidden_field :message_id, value: message.id %></h3>
       
-        <%= f.submit "Comment" %>
+        <h3><%= f.submit "Comment" %></h3>
     
       <% end %>
     </div>
@@ -97,6 +119,12 @@ img {
     <%= f.hidden_field :album_id, value: @album.id %>
    
     <%= f.submit "Submit Message" %>
+
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <p><%= error %></p>
+      <% end %>
+    <% end %>
   
 <% end %>
 

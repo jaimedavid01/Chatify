@@ -12,6 +12,7 @@ class AlbumsController < ApplicationController
             @album = Album.find(params[:id])
             @message = Message.new 
             @comment = Comment.new
+           
         end
 
 end

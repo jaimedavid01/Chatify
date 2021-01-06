@@ -14,7 +14,7 @@
  *= require_self
  */
  img {
-     width: 150px;
+     width: 250px;
  }
 
 
@@ -28,6 +28,11 @@
 
 .happy {
     background-color: green;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
 }
 
 
