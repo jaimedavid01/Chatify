@@ -1,9 +1,10 @@
 class CreateMessages < ActiveRecord::Migration[6.1]
   def change
     create_table :messages do |t|
-      t.text :comment
+      t.text :content
       t.string :mood
-      t.integer :forum_id
+      t.integer :user_id
+      t.integer :album_id
 
       t.timestamps
     end

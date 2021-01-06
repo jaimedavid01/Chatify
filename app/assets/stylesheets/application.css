@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+ img {
+     width: 150px;
+ }
+
+
+ .sad {
+    background-color: blue;
+ }
+
+ .angry {
+    background-color: red;
+ }
+
+.happy {
+    background-color: green;
+}

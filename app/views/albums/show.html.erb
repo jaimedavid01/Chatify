@@ -6,20 +6,50 @@
 <img src="<%= @album.img_url %>" alt="<%= @album.title %>">
 
 
-<% comment_count = 0 %>
-<% @album.forums.each do |forum| %>
-    <% forum.messages.each do |message| %>
-        <% if message.comment  %>
-          <% comment_count += 1%>
-        <% end %>
+<%# comment_count = 0 %>
+<%# @album.forums.each do |forum| %>
+    <%# forum.messages.each do |message| %>
+        <%# if message.comment  %>
+          <%# comment_count += 1%>
+        <%# end %>
+    <%# end %>
+<%# end %>
+
+<h3>Currently people have discussed <%= @album.title %>!</h3>
+
+<% @album.messages.each do |message| %>
+  <p class="<%= message.mood %>"> <%= message.content %></p>
+    <% message.comments.each do |comment| %>
+      <p style="background-color: yellow;"> <%= comment.content %></p>
     <% end %>
+      <%= form_for @comment do |f| %>
+        <%= f.label :content %>
+        <%= f.text_field :content %>
+        <br>
+        <%= f.hidden_field :message_id, value: message.id %>
+      
+        <%= f.submit "Comment" %>
+    
+      <% end %>
 <% end %>
 
-<h3>Currently <%= comment_count %> people have discussed <%= @album.title %>!</h3>
+<h1>Leave a new Message Here</h1>
+
+<%= form_for @message do |f| %>
+
+    <%= f.label :mood %>
+    <%= f.select :mood, [['happy'],['sad'],['angry']] %>
+    <br>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+    <br>
+    <%= f.hidden_field :album_id, value: @album.id %>
+   
+    <%= f.submit "Submit Message" %>
+  
+<% end %>
 
 
-
-<%= link_to 'Join The Conversation', forum_path(@album) %>
 
 
 

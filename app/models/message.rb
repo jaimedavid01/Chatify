@@ -1,3 +1,5 @@
 class Message < ApplicationRecord
-    belongs_to :forum
+    belongs_to :user
+    belongs_to :album
+    has_many :comments
 end
