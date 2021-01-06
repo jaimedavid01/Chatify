@@ -73,6 +73,7 @@ User.create(name: Faker::Name.name, username: Faker::Twitter.screen_name, age: r
 end
 
 # Boy's hardcoded album and messages
+Message.create(album_id: Album.first.id, content: Faker::Quote.famous_last_words, mood: "happy", user_id: User.first.id)
 Message.create(album_id: Album.first.id, content: Faker::Quote.famous_last_words, mood: "happy", user_id: User.all.sample.id)
 Message.create(album_id: Album.first.id, content: Faker::Quote.famous_last_words, mood: "sad", user_id: User.all.sample.id)
 Message.create(album_id: Album.first.id, content: Faker::Quote.matz, mood: "angry", user_id: User.all.sample.id)
