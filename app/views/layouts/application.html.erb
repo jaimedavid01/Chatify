@@ -11,6 +11,26 @@
   </head>
 
   <body>
+    <nav>
+        <ul>
+          <li>
+            <a href="https://fontmeme.com/fonts/bebas-neue-font/"><img class="logo" src="https://fontmeme.com/permalink/201221/5d6e03a14f6887de23b7ed5de7df879f.png" alt="bebas-neue-font" border="0"></a>
+          </li>
+
+          
+
+          <% if @current_user %>
+            <li class="nav-tabs right"><%= link_to "All Albums", albums_path %></li>
+            <li class="nav-tabs right"><%= link_to "Profile Page", user_path(@current_user) %></li>
+            <li class="nav-tabs right"><%= link_to "Logout", logout_path, method: :delete %></li>
+
+          <% else %>
+            <li class="nav-tabs right"><%= link_to "Sign Up", new_user_path %></li>
+            <li class="nav-tabs right"><%= link_to "Login", new_session_path %></li>
+          <% end %>
+
+        </ul>
+      </nav>
     <%= yield %>
   </body>
 </html>

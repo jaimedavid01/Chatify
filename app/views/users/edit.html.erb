@@ -5,7 +5,7 @@
 <% end %>
 
 <div class='form-container'>
-    <h1>Create An Account on Chatify</h1>
+    <h1>Edit Your Chatify Account</h1>
 
     <%= form_for @user do |f| %>
         <div class='form-input'>
@@ -28,7 +28,9 @@
             <%= f.text_field :password %>
         </div>
 
-        <%= f.submit class: 'form-btn' %>
+        <%= f.submit "Update Profile", class: 'form-btn' %>
     <% end %>
 
 </div>
+
+<%= button_to 'Delete Account', user_path(@user), method: :delete %><br>

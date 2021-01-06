@@ -1,21 +1,38 @@
-<h1>Album Show Page</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.center {
+  margin: auto;
+  width: 60%;
+  border: 0;
+  padding: 10px;
+  text-align: center;
 
-<h3><%= @album.title %></h3>
-<p><%= @album.genre %></p>
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+</head>
+<body>
 
-<img src="<%= @album.img_url %>" alt="<%= @album.title %>">
 
 
-<%# comment_count = 0 %>
-<%# @album.forums.each do |forum| %>
-    <%# forum.messages.each do |message| %>
-        <%# if message.comment  %>
-          <%# comment_count += 1%>
-        <%# end %>
-    <%# end %>
-<%# end %>
+<div class="center">
+  <h1><%= @album.title %></h1>
+<p>Genre: <%= @album.genre %></p>
+<p>Release Year: <%= @album.release_year %></p>
 
-<h3>Currently people have discussed <%= @album.title %>!</h3>
+<img src="<%= @album.img_url %>" alt="<%= @album.title %>"  style="width:40%">
+
+
+
+
+<div class="parent">
+<div class="div1"> 
 
 <% @album.messages.each do |message| %>
   <p class="<%= message.mood %>"> <%= message.content %></p>
@@ -33,7 +50,11 @@
       <% end %>
 <% end %>
 
-<h1>Leave a new Message Here</h1>
+</div>
+<div class="div2"> 
+
+
+<h4>Join the Conversation Here</h4>
 
 <%= form_for @message do |f| %>
 
@@ -48,6 +69,23 @@
     <%= f.submit "Submit Message" %>
   
 <% end %>
+
+
+
+</div>
+<div class="div3"> 
+
+
+</div>
+</div>
+</div>
+
+</body>
+</html>
+
+
+
+
 
 
 

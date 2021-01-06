@@ -1,18 +1,18 @@
-<%= button_to 'Main Menu', user_path(@current_user), method: :get %><br>
+
 <%# @album_categories.each do |album| %>
 
  <h1>Albums <%# album[:category] %></h1>
 
 <div class='index-container'>
-<% @albums.each do |album|%>
+    <% @albums.each do |album|%>
 
-<div class='index-title'>
-<a href="<%= album_path(album) %>">
-<img class="index-img" src="<%= album.img_url %>" alt="<%= album.title%>">
-</a>
+    <div class='index-title'>
+        <a href="<%= album_path(album) %>">
+            <img class="index-img" src="<%= album.img_url %>" alt="<%= album.title%>">
+        </a>
 
-</div>
-<% end %>
+    </div>
+    <% end %>
 </div>
 
 

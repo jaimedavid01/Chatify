@@ -1,9 +1,7 @@
 <div>
-<%= button_to 'View Albums', albums_path, method: :get %><br>
+
 <%= button_to 'Edit Profile', edit_user_path, method: :get %><br>
-<%= button_to 'Discussion Rooms', forums_path, method: :get %><br>
-<%= button_to 'Main Menu', user_path(@user), method: :get %><br>
-<%= button_to 'Delete Account', user_path(@user), method: :delete %><br>
+
 
     <div class="profile-info">
         <% if flash[:error] %>
@@ -11,13 +9,12 @@
         <% end %>
 
 
-        <h2><%= @user.name %>'s Personal Homepage</h2>
-        <p>Age: <%= @user.age %></p>
+        <h2>Welcome <%= @user.name %>!</h2>
         <p>Username: <%= @user.username %></p>
     </div>
     <% if @user.albums != nil %>
         <div class="forums-list">
-            <h2>Albums Discussed by <%= @user.username %></h2>
+            <h2>Albums You've Reviewed:</h2>
             <div class="forums-list-albums">
                 <% @user.albums.each do |album| %>
                     <div class="show-tile">
