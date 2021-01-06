@@ -12,10 +12,11 @@ class MessagesController < ApplicationController
 
     def create
         @user = User.find(session[:user_id])
-        @message  = Message.new(message_params)
+        @message = Message.new(message_params)
+        #@message.forum_id = params[:forum_id] || @forum.id
      
         if @message.save 
-            redirect_to user_path(@user)
+            redirect_to forum_path(@album)
         else 
             flash[:errors] = @message.errors.full_messages 
             redirect_to new_message_path
