@@ -5,6 +5,28 @@
 <head>
 <style>
 
+.parent {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(6, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+.div1 { grid-area: 1 / 1 / 5 / 2; }
+.div2 { grid-area: 1 / 2 / 4 / 3; }
+.div3 { grid-area: 4 / 2 / 5 / 3; }
+
+.center {
+  margin: auto;
+  width: 60%;
+  border: 0;
+  padding: 10px;
+  text-align: center;
+
+}
+
+
 h2 {
   text-align: left;
   white-space: wrap;
@@ -16,30 +38,11 @@ h2 {
 h3 {
   text-align: right;
   white-space: wrap;
-  margin: 0;
-  padding: 0;
+  margin: 1;
+  padding: 1;
  
 }
 
-.parent {
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-grid-template-rows: repeat(4, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px;
-}
-
-.div1 { grid-area: 1 / 2 / 3 / 5; }
-.div2 { grid-area: 3 / 2 / 4 / 5; }
-
-.center {
-  margin: auto;
-  width: 60%;
-  border: 0;
-  padding: 10px;
-  text-align: center;
-
-}
 img {
   display: block;
   margin-left: auto;
@@ -49,41 +52,52 @@ img {
 #overflowTest {
   background: 0;
   color: white;
-  padding: 0px;
-  width: 100%;
-  height: 400px;
-  overflow: scroll;
-  border: 0px solid #ccc;
-  white-space: wrap;
-  margin: 0;
-  padding: 0;
-
+  padding: 10px;
+  width: 80%;
+  height: 300px;
+  overflow: auto;
+  border: 0px ;
 }
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+
 </style>
 </head>
 <body>
 
 
 
-<div class="center">
-  <h1><%= @album.title %></h1>
-<p>Genre: <%= @album.genre %></p>
-<p>Release Year: <%= @album.release_year %></p>
 
-<img src="<%= @album.img_url %>" alt="<%= @album.title %>"  style="width:40%"><br>
 
 <br>
 
 
 <div class="parent">
-<div class="div1" id="overflowTest"> 
+<div class="div1" > 
+
+<div class="center">
+
+
+<img src="<%= @album.img_url %>" alt="<%= @album.title %>"  style="width:80% "><br>
+  <h1><%= @album.artist %></h1>
+  <h1><%= @album.title %></h1>
+<p>Genre: <%= @album.genre %></p>
+<p>Release Year: <%= @album.release_year %></p>
+
+</div>
+</div>
+<div class="div2" id="overflowTest"> 
 
 <% @album.messages.each do |message| %>
-  <h2><p><%= link_to message.user.username, user_path(message.user) %></p></h2>
-  <h2 class="<%= message.mood %>"> <%= message.content %></h2>
+  <h2><a><p><%= link_to message.user.username , user_path(message.user) %>:</p></a></h2>
+  <h2 class="<%= message.mood %>" style="font-size: 12px;"> <%= message.content %></h2>
     <h2><% message.comments.each do |comment| %></h2>
-      <h3><%= comment.user.username %></h3>
-     <h3 style="background-color: grey;"> <%= comment.content %></h3>
+      <h3 style="font-size: 10px; color: grey;"><p><%= comment.user.username %></p></h3>
+    <p><h3 style="background-color: grey; border-radius: 10px; padding: 8px ; width: 96%; "> <%= comment.content %></p></h3>
     <% end %>
 
     <div class='form-container'>
@@ -91,7 +105,7 @@ img {
         <p><%= flash[:error] %></p>
       <% end %>
       <h3><%= form_for @comment do |f| %></h3>
-        <h3><%= f.label :content %></h3>
+        <h3><% f.hidden_field :content %></h3>
         <h3><%= f.text_field :content %></h3>
 
        <h3> <%= f.hidden_field :message_id, value: message.id %></h3>
@@ -102,37 +116,38 @@ img {
     </div>
 <% end %>
 
+
+
 </div>
-<div class="div2"> 
-
-
-<h4>Join the Conversation Here</h4>
+<div class="div3" >
+ <div class="center">
+<p class="center">Join the Conversation Here</p>
 
 <%= form_for @message do |f| %>
 
     <%= f.label :mood %>
     <%= f.select :mood, [['happy'],['sad'],['angry']] %>
-    <br>
+    
     <% f.label :content %>
     <%= f.text_field :content %>
-    <br>
-    <%= f.hidden_field :album_id, value: @album.id %>
+    
+   <p> <%= f.hidden_field :album_id, value: @album.id %></p>
    
     <%= f.submit "Submit Message" %>
 
     <% if flash[:errors] %>
       <% flash[:errors].each do |error| %>
-        <p><%= error %></p>
+       <h3> <p><%= error %></p>
       <% end %>
     <% end %>
   
 <% end %>
-
-
-
 </div>
 </div>
 </div>
+
+
+
 
 </body>
 </html>

@@ -53,7 +53,7 @@ class MessagesController < ApplicationController
     private 
 
     def message_params 
-        params.require(:message).permit(:content, :album_id)
+        params.require(:message).permit(:content, :album_id, :mood)
     end 
 
 end

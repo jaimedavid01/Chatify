@@ -18,21 +18,36 @@
  }
 
 
- .sad {
-    background-color: blue;
- }
 
- .angry {
-    background-color: red;
- }
-
-.happy {
-    background-color: green;
-}
 
 body {
     font-family: Arial, sans-serif;
     font-size: 10px;
 }
 
+
+.sad {
+    background-color: blue;
+    padding: 10px;
+    width: 60%;
+    font-size: 15px;
+    border-radius: 12px;
+    box-shadow: 3px 3px 3px #8f8f8f;
+ }
+
+ .angry {
+    background-color: red;
+    padding: 10px;
+    width: 60%;
+    font-size: 15px;
+    border-radius: 12px;
+ }
+
+.happy {
+    background-color: green;
+    padding: 10px;
+    width: 60%;
+    font-size: 15px;
+    border-radius: 12px;
+}
 
