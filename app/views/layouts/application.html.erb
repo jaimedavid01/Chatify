@@ -8,7 +8,13 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+     <style>
+  
+
+  </style>
   </head>
+ 
 
   <body>
     <div class="sidenav">
@@ -19,7 +25,7 @@
           
 
           <% if @current_user %>
-            <li class="nav-tabs-right"><%= link_to "All Albums", albums_path %></li>
+           <li class="nav-tabs-right"><%= link_to "All Albums", albums_path %></li>
             <li class="nav-tabs-right"><%= link_to "Profile Page", user_path(@current_user) %></li>
             <li class="nav-tabs-right"><%= link_to "Logout", logout_path, method: :delete %></li>
 

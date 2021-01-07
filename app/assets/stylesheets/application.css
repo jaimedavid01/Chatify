@@ -14,14 +14,12 @@
  *= require_self
  */
 
-/*
- body {
-    background-color: rgb(30, 215, 96);
- }
-*/
+
+
+
 
  img {
-     width: 250px;
+     width: 375px;
      border-radius: 8px;
      box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 1)
  }
@@ -33,6 +31,9 @@ body {
     font-family: Verdana, sans-serif;
     font-size: 11px;
     color: #646464;
+    /* background-color: rgb(252, 248, 241); */
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/3d/Newback.jpg);
+    /* background-color: rgb(255, 248, 241); */
 }
 
 
@@ -73,8 +74,18 @@ body {
     overflow-x: scroll;
     overflow-y: hidden;
     z-index: -10;
-    /* border: 1px solid white; */
-    padding-top: 60px;
+    padding-top: 15px;
+    padding-bottom: 40px;
+  }
+
+  .index-container1 {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    z-index: -10;
+    padding-top: 20px;
+    padding-bottom: 40px;
   }
   
    .index-tile {
@@ -85,17 +96,19 @@ body {
     
     .index-img {  
       height: 100%; 
-      border-radius: 10px;
-      margin-left: 10px;
-      margin-left: 10px;
+      border-radius: 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 12px;
+      margin-left: 12px;
     }
 
 
-    .index-tile:hover {
-      transform: scale(1.25);
+    .index-img:hover {
+      transform: scale(1.10);
       z-index: 1000;
       overflow: visible;
-      transition: 1.5s;
+      transition: 2s;
       box-shadow: 0px 0px 20px;
     }
 
@@ -134,10 +147,49 @@ body {
 
     .title1 {
         margin: 1px;
-        padding: 0;"
+        padding: 0;
     }
 
 
+    .parent1 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      }
+      
+      .div11 { grid-area: 1 / 1 / 2 / 2; }
+
+
+      .parent2 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        }
+        
+        .div12 { 
+          grid-area: 1 / 2 / 2 / 3; 
+          margin: auto;
+          width: 60%;
+          border: 0;
+          padding: 10px;
+          text-align: center;
+        }
+
+        .parent {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+
+        .div1 { grid-area: 1 / 1 / 4 / 6; }
+
+      
 
 
 
@@ -145,7 +197,7 @@ body {
 
 .sidenav {
     height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 100px; /* Set the width of the sidebar */
+    width: 100px; /* Set the width of the sidebar. Was at 100 */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
@@ -153,6 +205,7 @@ body {
     /* background-color: #111; Black */
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
+    
     /* border: solid; */
     }
 
@@ -160,17 +213,81 @@ body {
 .nav-tabs-right {
     padding: 4px 4px 2px 16px;
     text-decoration: none;
-    font-size: 10px;
-    color: #818181;
+    font-size: 12px;
+    color: #646464;
     display: block;
     /*transition: 0.3s;*/
     list-style-type: none;
+    padding-right: 28px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    float: right; 
+    text-align: center;
   }
 
+
+  /* a:link {
+    text-decoration: none;
+    color: #646464;
+  }
+  a:visited {
+    color: #646464;
+  } */
   
   .main {
     margin-left: 100px; /*Same as the width of the sidenav */
     /* font-size: 28px; Increased text to enable scrolling */
     padding: 0px 10px;
   }
-  
+/*   
+ .sessions-container {
+
+
+}  */
+
+
+.sessions-input {
+    margin-top: 10px;
+   
+  }
+
+
+  .sessions-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 6px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer; 
+    border-radius: 10px;
+    width: 50%;
+ 
+  }
+
+  a:link {
+    text-decoration: none;
+    color: #646464;
+  }
+  a:visited {
+    color: #646464;
+  }
+
+
+  .profile-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 4px 4px;
+    text-decoration: none;
+    margin: 4px 1px;
+    cursor: pointer; 
+    border-radius: 10px;
+    width: 40%;
+ 
+  }
+/* 
+  .whatsapp-background {
+      background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b1/Little_background.jpg);
+      /* background-color: black; */
+  } */

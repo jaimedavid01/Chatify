@@ -3,7 +3,7 @@
         <h2>Profile for: <%= @user.username %></h2>
 
         <div class="forums-list">
-                    <h3>Albums Reviewed by <%= @user.username %></h3>
+                    <h3>Albums Reviewed by: <%= @user.username %></h3>
                     <div class="index-container">
                         <% @user.albums.uniq.each do |album| %>
                             <div class="show-tile">
@@ -15,7 +15,7 @@
                     </div>
                 </div>
     <% else %>
-        <%= button_to 'Edit Profile', edit_user_path, method: :get %><br>
+       
 
 
             <div class="profile-info">
@@ -24,13 +24,16 @@
                 <% end %>
 
 
-                <h2>Welcome <%= @user.name %>!</h2>
-                <p>Username: <%= @user.username %></p>
+                <h1>Welcome <%= @user.name %>!</h1>
+                <h2>Username: <%= @user.username %></h2>
+
+                <%= button_to 'Edit Profile', edit_user_path, method: :get, class: "profile-btn" %>
+                
             </div>
             <% if @user.albums.count != 0 %>
                 <div class="forums-list">
                     <h3>Albums You've Reviewed:</h3>
-                    <div class="index-container">
+                    <div class="index-container1">
                         <% @user.albums.uniq.each do |album| %>
                             <div class="show-tile">
                                 <a href="<%= album_path(album) %>">
@@ -41,7 +44,7 @@
                     </div>
                 </div>
             <% else %>
-                <h3> You Haven't Reveiwed Any Albums Yet!</h3>
+                <h3> You Haven't Reviewed Any Albums Yet!</h3>
                 <h3> Click <%= link_to 'HERE', albums_path %> to Write Your First Review!</h3>
             <% end %>
 

@@ -1,34 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+<div class="parent1">
+<div class="div11">
+
+
 <% if flash[:errors] %>
   <% flash[:errors].each do |error| %>
     <p><%= error %></p>
   <% end %>
 <% end %>
 
-<div class='form-container'>
+<div class='sessions-container'>
     <h1>Sign Up for your Chatify Account</h1>
 
     <%= form_for @user do |f| %>
-        <div class='form-input'>
-            <%= f.label :name %>
+        <div class='sessions-input'>
+           <p> <%= f.label :name %></p>
             <%= f.text_field :name %>
         </div>
 
-        <div class='form-input'>
-            <%= f.label :age %>
+        <div class='sessions-input'>
+            <p><%= f.label :age %></p>
             <%= f.number_field :age %>
         </div>
 
-        <div class='form-input'>
-            <%= f.label :username %>
+        <div class='sessions-input'>
+            <p><%= f.label :username %></p>
             <%= f.text_field :username %>
         </div>
 
-        <div class='form-input'>
-            <%= f.label :password %>
-            <%= f.password_field :password %>
+        <div class='sessions-input'>
+            <p><%= f.label :password %></p>
+            <p><%= f.password_field :password %></p>
         </div>
 
-        <%= f.submit "Create Account", class: 'form-btn' %>
+        <%= f.submit "Create Account", :class => 'submit2' %>
     <% end %>
 
+    </div>
 </div>
+
+</div>
+</div>
+
+</body>
+</html>
