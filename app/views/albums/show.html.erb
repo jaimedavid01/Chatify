@@ -126,7 +126,7 @@ a:link {
 <%= form_for @message do |f| %>
 
     <%= f.label :mood %>
-    <%= f.select :mood, [['happy'],['sad'],['angry']] %>
+    <%= f.select :mood, [['positive'],['mixed'],['negative']] %>
     
     <% f.label :content %>
     <%= f.text_field :content %>

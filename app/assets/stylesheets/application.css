@@ -26,7 +26,7 @@ body {
 }
 
 
-.sad {
+.mixed {
     background-color: rgb(31, 117, 245);
     padding: 10px;
     width: 60%;
@@ -36,7 +36,7 @@ body {
     margin: 3;
  }
 
- .angry {
+ .negative {
     background-color: rgb(194, 70, 62);
     padding: 10px;
     width: 60%;
@@ -46,7 +46,7 @@ body {
     margin: 3;
  }
 
-.happy {
+.positive {
     background-color: rgb(76, 161, 20);
     padding: 10px;
     width: 60%;
