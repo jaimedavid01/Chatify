@@ -22,32 +22,37 @@
 
 body {
     font-family: Arial, sans-serif;
-    font-size: 10px;
+    font-size: 11px;
 }
 
 
 .sad {
-    background-color: blue;
+    background-color: rgb(31, 117, 245);
     padding: 10px;
     width: 60%;
     font-size: 15px;
     border-radius: 12px;
     box-shadow: 3px 3px 3px #8f8f8f;
+    margin: 3;
  }
 
  .angry {
-    background-color: red;
+    background-color: rgb(194, 70, 62);
     padding: 10px;
     width: 60%;
     font-size: 15px;
     border-radius: 12px;
+    box-shadow: 3px 3px 3px #8f8f8f;
+    margin: 3;
  }
 
 .happy {
-    background-color: green;
+    background-color: rgb(76, 161, 20);
     padding: 10px;
     width: 60%;
     font-size: 15px;
     border-radius: 12px;
+    box-shadow: 3px 3px 3px #8f8f8f;
+    margin: 3;
 }
 
