@@ -14,7 +14,7 @@ Message.destroy_all
 Album.create(title: "What's Going On", release_year: "1971", genre: "Pop", img_url: "https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-001-Marvin-Gaye-WHATS-GOING-ON.jpg?w=1000", artist: "Marvin Gaye")
 Album.create(title: "Pet Sounds", release_year: "1966", genre: "Rock", img_url: "https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-002-Beach-Boys-PET-SOUNDS-update.jpg?w=1000", artist: "The Beach Boys")
 Album.create(title: "Blue", release_year: "1971", genre: "Rock", img_url: "https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-003-JoniMitchell-BLUE-HR.jpg?w=1000", artist: "Joni Mitchell")
-Album.create(title: "Songs in the Key of Life", release_year: "1976", genre: "Classical", img_url: "https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-004-Stevie-Wonder-SONGS-IN-THE-KEY-OF-LIFE.jpg?w=1000", artist: "Stevie Wonder")
+Album.create(title: "Songs in the Key of Life", release_year: "1976", genre: "Pop", img_url: "https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-004-Stevie-Wonder-SONGS-IN-THE-KEY-OF-LIFE.jpg?w=1000", artist: "Stevie Wonder")
 Album.create(title: "Abbey Road", release_year: "1969", genre: "Pop", img_url: "https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-005-Beatles-ABBEY-ROAD.jpg?w=1000", artist: "The Beatles")
 Album.create(title: "The Slow Rush", release_year: "2020", genre: "Pop", img_url: "https://upload.wikimedia.org/wikipedia/en/5/54/Tame_Impala_-_The_Slow_Rush.png", artist: "Tame Impala")
 Album.create(title: "Chromatica", release_year: "2020", genre: "Pop", img_url: "https://upload.wikimedia.org/wikipedia/en/d/d6/Lady_Gaga_-_Chromatica_%28Official_Album_Cover%29.png", artist: "Lady Gaga")
@@ -47,10 +47,10 @@ Album.create(title: "Folklore", release_year: "2020", genre: "Pop", img_url: "ht
 Album.create(title: "Women in Music Pt. III", release_year: "2020", genre: "Pop", img_url: "https://upload.wikimedia.org/wikipedia/en/6/64/Haim_-_Women_in_Music_Pt._III.png", artist: "HAIM")
 Album.create(title: "Melodrama", release_year: "2017", genre: "Pop", img_url: "https://upload.wikimedia.org/wikipedia/en/b/b2/Lorde_-_Melodrama.png", artist: "Lorde")
 Album.create(title: "A Seat At The Table", release_year: "2016", genre: "Pop", img_url: "https://upload.wikimedia.org/wikipedia/en/8/8d/Solange_-_A_Seat_at_the_Table.png", artist: "Solange")
-Album.create(title: "Golden Hour", release_year: "2018", genre: "Country", img_url: "https://upload.wikimedia.org/wikipedia/en/6/65/Kacey_Musgraves_-_Golden_Hour.png", artist: "Kacey Musgraves")
+Album.create(title: "Golden Hour", release_year: "2018", genre: "Pop", img_url: "https://upload.wikimedia.org/wikipedia/en/6/65/Kacey_Musgraves_-_Golden_Hour.png", artist: "Kacey Musgraves")
 Album.create(title: "Illinois", release_year: "2005", genre: "Rock", img_url: "https://upload.wikimedia.org/wikipedia/en/0/01/Sufjan_Stevens_-_Illinois.jpg", artist: "Sufjan Stevens")
 Album.create(title: "Arular", release_year: "2005", genre: "Pop", img_url: "https://upload.wikimedia.org/wikipedia/en/2/25/M.I.A._-_Arular.png", artist: "M.I.A")
-Album.create(title: "Elephant", release_year: "2003", genre: "Rock", img_url: "https://upload.wikimedia.org/wikipedia/en/6/65/Kacey_Musgraves_-_Golden_Hour.png", artist: "The White Stripes")
+Album.create(title: "Elephant", release_year: "2003", genre: "Rock", img_url: "https://upload.wikimedia.org/wikipedia/en/1/11/Elephant%2C_The_White_Stripes.png", artist: "The White Stripes")
 Album.create(title: "Loveless", release_year: "1991", genre: "Rock", img_url: "https://upload.wikimedia.org/wikipedia/en/4/4b/My_Bloody_Valentine_-_Loveless.png", artist: "My Bloody Valentine")
 Album.create(title: "The Mideducation of Lauryn Hill", release_year: "1998", genre: "R&B", img_url: "https://upload.wikimedia.org/wikipedia/en/5/55/LaurynHillTheMiseducationofLaurynHillalbumcover.jpg", artist: "Lauryn Hill")
 Album.create(title: "Exile in Guyville", release_year: "1993", genre: "Pop", img_url: "https://upload.wikimedia.org/wikipedia/en/0/00/Liz_Phair_-_Exile_in_Guyville.jpg", artist: "Liz Phair")
@@ -201,16 +201,16 @@ Message.create(album_id: Album.all.sample.id, content: "Disgust. I almost felt l
 
 
 30.times do 
-    Comment.create(user_id: User.first.id, message_id: Message.all.sample.id, content: Faker::Quote.famous_last_words)
+    Comment.create(user_id: User.all.sample.id, message_id: Message.all.sample.id, content: Faker::Quote.famous_last_words)
 end
 
 
 10.times do 
-    Comment.create(user_id: User.first.id, message_id: Message.all.sample.id, content: Faker::Quote.robin)
+    Comment.create(user_id: User.all.sample.id, message_id: Message.all.sample.id, content: Faker::Quote.robin)
 end
 
 10.times do 
-    Comment.create(user_id: User.first.id, message_id: Message.all.sample.id, content: Faker::Quote.yoda)
+    Comment.create(user_id: User.all.sample.id, message_id: Message.all.sample.id, content: Faker::Quote.yoda)
 end
 
 

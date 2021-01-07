@@ -31,7 +31,7 @@
                 <div class="forums-list">
                     <h3>Albums You've Reviewed:</h3>
                     <div class="forums-list-albums">
-                        <% @user.albums.each do |album| %>
+                        <% @user.albums.uniq.each do |album| %>
                             <div class="show-tile">
                                 <a href="<%= album_path(album) %>">
                                     <img class="index-img" src="<%= album.img_url %>" alt="<%= album.title %>">

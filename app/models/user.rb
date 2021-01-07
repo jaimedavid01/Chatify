@@ -7,6 +7,8 @@ class User < ApplicationRecord
     validates :name, presence: true
     validates :username, presence: true
     validates :age, numericality: { greater_than_or_equal_to: 18 } #, message: 'You must be 18 Years or Older to Use Chatify' 
+    
+    #validates :album_id, uniqueness: {scope: user_id}
     #validates :password, presence: true
 
 

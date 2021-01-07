@@ -1,5 +1,5 @@
 # Chatify                            
-![a pretty tiger](https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg)
+![a logo](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Chatify_App_Logo.png/236px-Chatify_App_Logo.png)
 
 Chatify is a music messaging application that allows users write reviews of various popular music albums, as well as writing comments on other users' reviews. Users can select a basic mood of a message, which corresponds to an appropriate color to more quickly convey a their emotion over text. Chatify is a Rails app that uses an MVC structure and RESTful conventions. We've used SQLite3 for our database, and have run our migrations with ActiveRecord. 
 

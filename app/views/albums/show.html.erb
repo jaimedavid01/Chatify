@@ -63,6 +63,9 @@ a:link {
   text-decoration: none;
   color: black;
 }
+a:visited {
+  color: black;
+}
 
 
 </style>
@@ -96,7 +99,7 @@ a:link {
   <h2><a><p><%= link_to message.user.username , user_path(message.user) %>:</p></a></h2>
   <h2 class="<%= message.mood %>" style="font-size: 12px;"> <%= message.content %></h2>
     <h2><% message.comments.each do |comment| %></h2>
-      <h3 style="font-size: 10px; color: grey;"><p><%= comment.user.username %></p></h3>
+      <h3 style="font-size: 10px; color: grey;"><p><%= link_to comment.user.username, user_path(comment.user) %></p></h3>
     <p><h3 style="background-color: grey; border-radius: 11px; padding: 6px ; width: 98%; margin: 3; "> <%= comment.content %></p></h3>
     <% end %>
 
@@ -110,7 +113,7 @@ a:link {
 
        <h3> <%= f.hidden_field :message_id, value: message.id %></h3>
       
-        <h3><%= f.submit "Comment" %></h3>
+        <h3><%= f.submit "Comment", :class => 'submit2' %></h3>
     
       <% end %>
     </div>
@@ -120,8 +123,8 @@ a:link {
 
 </div>
 <div class="div3" >
- <div class="center">
-<p class="center">Join the Conversation Here</p>
+ <div >
+<p >Join the Conversation Here</p>
 
 <%= form_for @message do |f| %>
 
@@ -129,11 +132,11 @@ a:link {
     <%= f.select :mood, [['positive'],['mixed'],['negative']] %>
     
     <% f.label :content %>
-    <%= f.text_field :content %>
+  <%= f.text_field :content, :class => 'form'  %>
     
    <p> <%= f.hidden_field :album_id, value: @album.id %></p>
    
-    <%= f.submit "Submit Message" %>
+   <p> <%= f.submit "Submit Message", :class => 'submit' %>
 
     <% if flash[:errors] %>
       <% flash[:errors].each do |error| %>

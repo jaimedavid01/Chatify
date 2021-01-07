@@ -13,8 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+
+ * {
+    background-color: rgb(30, 215, 96);
+ }
+
+
  img {
      width: 250px;
+     border-radius: 8px;
+     box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 1)
  }
 
 
@@ -55,4 +64,70 @@ body {
     box-shadow: 3px 3px 3px #8f8f8f;
     margin: 3;
 }
+
+
+.index-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    z-index: -10;
+    /* border: 1px solid white; */
+    padding-top: 60px;
+  }
+  
+   .index-tile {
+     margin: 15px 3px 0px 3px;
+     height: 300px;
+     /* border: 1px solid white; */
+    }
+    
+    .index-img {  
+      height: 100%; 
+      border-radius: 10px;
+      margin-left: 10px;
+      margin-left: 10px;
+    }
+
+
+    .index-tile:hover {
+      transform: scale(1.25);
+      z-index: 1000;
+      overflow: visible;
+      transition: 1.5s;
+      box-shadow: 0px 0px 20px;
+    }
+
+    .submit {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 8px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer; 
+        border-radius: 10px;
+        width: 27%;
+        right: 200px;
+        position: absolute;
+
+    }
+
+    .submit2 {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 8px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer; 
+        border-radius: 10px;
+        width: 40%;
+
+    }
+
+    .form {
+        width: 60%;
+    }
+
 
