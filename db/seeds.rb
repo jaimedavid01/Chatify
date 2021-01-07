@@ -214,7 +214,7 @@ end
 end
 
 
-60.times do 
+90.times do 
     Comment.create(user_id: User.all.sample.id, message_id: Message.all.sample.id, content: Faker::Quote.famous_last_words)
 end
 

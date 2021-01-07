@@ -14,11 +14,11 @@
  *= require_self
  */
 
-
- * {
+/*
+ body {
     background-color: rgb(30, 215, 96);
  }
-
+*/
 
  img {
      width: 250px;
@@ -30,8 +30,9 @@
 
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Verdana, sans-serif;
     font-size: 11px;
+    color: #646464;
 }
 
 
@@ -66,7 +67,7 @@ body {
 }
 
 
-.index-container {
+    .index-container {
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
@@ -126,8 +127,50 @@ body {
 
     }
 
+   
     .form {
         width: 60%;
     }
 
+    .title1 {
+        margin: 1px;
+        padding: 0;"
+    }
 
+
+
+
+
+
+
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 100px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    /* background-color: #111; Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    /* border: solid; */
+    }
+
+
+.nav-tabs-right {
+    padding: 4px 4px 2px 16px;
+    text-decoration: none;
+    font-size: 10px;
+    color: #818181;
+    display: block;
+    /*transition: 0.3s;*/
+    list-style-type: none;
+  }
+
+  
+  .main {
+    margin-left: 100px; /*Same as the width of the sidenav */
+    /* font-size: 28px; Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+  

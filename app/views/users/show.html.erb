@@ -4,8 +4,8 @@
 
         <div class="forums-list">
                     <h3>Albums Reviewed by <%= @user.username %></h3>
-                    <div class="forums-list-albums">
-                        <% @user.albums.each do |album| %>
+                    <div class="index-container">
+                        <% @user.albums.uniq.each do |album| %>
                             <div class="show-tile">
                                 <a href="<%= album_path(album) %>">
                                     <img class="index-img" src="<%= album.img_url %>" alt="<%= album.title %>">
@@ -30,7 +30,7 @@
             <% if @user.albums.count != 0 %>
                 <div class="forums-list">
                     <h3>Albums You've Reviewed:</h3>
-                    <div class="forums-list-albums">
+                    <div class="index-container">
                         <% @user.albums.uniq.each do |album| %>
                             <div class="show-tile">
                                 <a href="<%= album_path(album) %>">

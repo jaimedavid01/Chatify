@@ -32,6 +32,7 @@ h2 {
   white-space: wrap;
   margin: 0;
   padding: 0;
+  letter-spacing: 0px;
   
 }
 
@@ -61,11 +62,13 @@ img {
 
 a:link {
   text-decoration: none;
-  color: black;
+  color: #646464;
 }
 a:visited {
-  color: black;
+  color: #646464;
 }
+
+
 
 
 </style>
@@ -86,10 +89,11 @@ a:visited {
 
 
 <img src="<%= @album.img_url %>" alt="<%= @album.title %>"  style="width:80% "><br>
-  <h1><%= @album.artist %></h1>
-  <h1><%= @album.title %></h1>
-<p>Genre: <%= @album.genre %></p>
-<p>Release Year: <%= @album.release_year %></p>
+  <h1  class="title1"><%= @album.artist %></h1>
+  <h1 class="title1"><%= @album.title %></h1>
+<p class="title1">Genre: <%= @album.genre %></p>
+<p class="title1">Release Year: <%= @album.release_year %></p>
+
 
 </div>
 </div>
@@ -124,19 +128,19 @@ a:visited {
 </div>
 <div class="div3" >
  <div >
-<p >Join the Conversation Here</p>
+<h2 style="color: #646464">Join the Conversation Here:</h2>
 
-<%= form_for @message do |f| %>
+ <p><%= form_for @message do |f| %></p>
 
     <%= f.label :mood %>
     <%= f.select :mood, [['positive'],['mixed'],['negative']] %>
     
     <% f.label :content %>
-  <%= f.text_field :content, :class => 'form'  %>
+<%= f.text_field :content, :class => 'form'  %>
     
    <p> <%= f.hidden_field :album_id, value: @album.id %></p>
    
-   <p> <%= f.submit "Submit Message", :class => 'submit' %>
+   <p> <%= f.submit "Submit Message", :class => 'submit' %></p>
 
     <% if flash[:errors] %>
       <% flash[:errors].each do |error| %>

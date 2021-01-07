@@ -11,26 +11,28 @@
   </head>
 
   <body>
+    <div class="sidenav">
     <nav>
         <ul>
-          <li>
-            
-          </li>
+          
 
           
 
           <% if @current_user %>
-            <li class="nav-tabs right"><%= link_to "All Albums", albums_path %></li>
-            <li class="nav-tabs right"><%= link_to "Profile Page", user_path(@current_user) %></li>
-            <li class="nav-tabs right"><%= link_to "Logout", logout_path, method: :delete %></li>
+            <li class="nav-tabs-right"><%= link_to "All Albums", albums_path %></li>
+            <li class="nav-tabs-right"><%= link_to "Profile Page", user_path(@current_user) %></li>
+            <li class="nav-tabs-right"><%= link_to "Logout", logout_path, method: :delete %></li>
 
           <% else %>
-            <li class="nav-tabs right"><%= link_to "Sign Up", new_user_path %></li>
-            <li class="nav-tabs right"><%= link_to "Login", new_session_path %></li>
+            <li class="nav-tabs-right"><%= link_to "Sign Up", new_user_path %></li>
+            <li class="nav-tabs-right"><%= link_to "Login", new_session_path %></li>
           <% end %>
 
         </ul>
       </nav>
+      </div>
+      <div class="main">
     <%= yield %>
+    </div>
   </body>
 </html>
