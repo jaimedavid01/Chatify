@@ -5,15 +5,15 @@
 
 .parent {
 display: grid;
-grid-template-columns: repeat(2, 1fr);
+grid-template-columns: repeat(6, 1fr);
 grid-template-rows: repeat(6, 1fr);
 grid-column-gap: 0px;
 grid-row-gap: 0px;
 }
 
-.div1 { grid-area: 1 / 1 / 5 / 2; }
-.div2 { grid-area: 1 / 2 / 4 / 3; }
-.div3 { grid-area: 4 / 2 / 5 / 3; }
+.div1 { grid-area: 2 / 1 / 6 / 4; }
+.div2 { grid-area: 2 / 4 / 5 / 7; }
+.div3 { grid-area: 5 / 4 / 6 / 7; }
 
 .center {
   margin: auto;
@@ -75,8 +75,6 @@ a:visited {
 
 
 
-
-
 <br>
 
 
@@ -86,7 +84,7 @@ a:visited {
 <div class="center">
 
 
-<img src="<%= @album.img_url %>" alt="<%= @album.title %>"  style="width:80% "><br>
+<img src="<%= @album.img_url %>" alt="<%= @album.title %>"  style="width:100% "><br>
   <h1  class="title1"><%= @album.artist %></h1>
   <h1 class="title1"><%= @album.title %></h1>
 <p class="title1">Genre: <%= @album.genre %></p>
@@ -100,11 +98,11 @@ a:visited {
 <div class="whatsapp-background">
 
 <% @album.messages.each do |message| %>
-  <h2><a><p><%= link_to message.user.username , user_path(message.user) %>:</p></a></h2>
+  <h2><a><p style="color: grey;"><%= link_to message.user.username , user_path(message.user) %>:</p></a></h2>
   <h2 class="<%= message.mood %>" style="font-size: 12px; font-weight: normal;"> <%= message.content %></h2>
     <h2><% message.comments.each do |comment| %></h2>
-      <h3 style="font-size: 10px; color: grey;"><p><%= link_to comment.user.username, user_path(comment.user) %></p></h3>
-    <p><h3 style="background-color: grey; border-radius: 11px; padding: 6px ; width: 98%; margin: 3; font-size: 12px; font-weight: normal;"> <%= comment.content %></p></h3>
+      <h3 style="font-size: 12px; color: grey;"><p><%= link_to comment.user.username, user_path(comment.user) %></p></h3>
+    <p><h3 style="background-color: grey; border-radius: 12px; padding: 10px ; width: 98%; margin: 3; font-size: 12px; font-weight: normal;"> <%= comment.content %></p></h3>
     <% end %>
 
     <div class='form-container'>

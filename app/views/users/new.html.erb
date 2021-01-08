@@ -10,14 +10,14 @@
 <div class="div11">
 
 
+<div class='sessions-container'>
+    <h1 style="color: #4CAF50;">Sign Up for your Chatify Account</h1>
+
 <% if flash[:errors] %>
   <% flash[:errors].each do |error| %>
-    <p><%= error %></p>
-  <% end %>
-<% end %>
-
-<div class='sessions-container'>
-    <h1>Sign Up for your Chatify Account</h1>
+    <p style=" color: rgb(194, 70, 62);"><%= error %></p>
+     <% end %>
+    <% end %>
 
     <%= form_for @user do |f| %>
         <div class='sessions-input'>
@@ -42,6 +42,11 @@
 
         <%= f.submit "Create Account", :class => 'submit2' %>
     <% end %>
+
+    <div class="div21">
+
+
+    </div>
 
     </div>
 </div>

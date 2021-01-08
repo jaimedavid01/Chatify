@@ -24,9 +24,8 @@
                 <% end %>
 
 
-                <h1>Welcome <%= @user.name %>!</h1>
+                <h1 style="color: #4CAF50;">Welcome <%= @user.name %></h1>
                 <h2>Username: <%= @user.username %></h2>
-
                 <%= button_to 'Edit Profile', edit_user_path, method: :get, class: "profile-btn" %>
                 
             </div>
@@ -51,4 +50,6 @@
 
     <% end %>
 </div>
+
+
 
