@@ -322,29 +322,42 @@ body {
 
 
   .logo-pic {
-    height: 8%;
-    width: 8%;
+    height: 7%;
+    width: 7%;
     bottom: 10px;
     bottom: 10px;
     left: 0px;
     position: sticky;
-    /* transform :rotate(-90deg); */
+    -webkit-animation: spin 1s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+    animation: spin 3s linear infinite;
   }
 
 
   .logo-pic-text {
-    height: 25%;
-    width: 25%;
+    height: 24%;
+    width: 24%;
     bottom: 10px;
     left: 0px;
     position: sticky;
+
+  }
+
+  @-webkit-keyframes spin{
+    100%{-webkit-transform: rotate(360deg);}
+  }
+  @-moz-keyframes spin{
+    100%{-webkit-transform: rotate(360deg);}
+  }
+  @keyframes spin{
+    100%{-webkit-transform: rotate(360deg);}
   }
 
   .footerlogo {
     margin: auto;
     width: 60%;
     border: 0;
-    left 0px;
+    left: 0px;
     padding: 10px;
     text-align: left;
   }

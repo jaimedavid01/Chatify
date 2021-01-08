@@ -86,31 +86,24 @@ a:visited {
 <body>
 
 
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
 <div class="parent">
 <div class="div1" > 
 
 <div class="center">
 
+<br>
 
 <img src="<%= @album.img_url %>" alt="<%= @album.title %>"  style="width:100%; height: 100% "><br>
   <h1  class="title1"><%= @album.artist %></h1>
-  <h1 class="title1"><%= @album.title %></h1>
+  <h1 class="title1" style="color: #4CAF50;"><%= @album.title %></h1>
 <p class="title1">Genre: <%= @album.genre %></p>
 <p class="title1">Release Year: <%= @album.release_year %></p>
 
 
 </div>
 </div>
+<br>
+
 <div class="div2" id="overflowTest"> 
 <%#If it's broke this is where you did it a;lskdjf;alskdjfl;akjdsf;lajsdlkfjadls;kjfal;sdjfl;asdkjfl;jksdl;fjkalsd;kjfa;sdljfa;lsdkjf;lajksdf;lasdjfalsd;jkfl;ajdsfja;ldsjf;aldsfj%>
 <div class="whatsapp-background">
@@ -166,6 +159,7 @@ a:visited {
     <% end %>
   
 <% end %>
+</div>
 </div>
 </div>
 </div>
