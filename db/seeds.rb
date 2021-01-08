@@ -62,7 +62,7 @@ Album.create(title: "Rid of Me", release_year: "1993", genre: "Rock", img_url: "
 
 
 
-User.create(name: "Boy", username: "Boy1", age: rand(1..100), password: "123")
+User.create(name: "Tim", username: "Boy1", age: rand(1..100), password: "123")
 User.create(name: Faker::Name.name, username: Faker::Twitter.screen_name, age: rand(1..100), password: "123")
 User.create(name: Faker::Name.name, username: Faker::Twitter.screen_name, age: rand(1..100), password: "123")
 User.create(name: Faker::Name.name, username: Faker::Twitter.screen_name, age: rand(1..100), password: "123")
