@@ -2,24 +2,18 @@ class AlbumsController < ApplicationController
 
         def index
             @albums =  Album.all
-
-
-            # pop = @albums.select {|album| album.genre == "Pop"}
-            # hiphop = @albums.select {|album| album.genre == "Hip-hop"}
-            # rock = @albums.select {|album| album.genre == "Rock"}
-            # electronic = @albums.select {|album| album.genre == "Dance and Electronic"}
-            # country = @albums.select {|album| album.genre == "Country"}
-            # classical = @albums.select {|album| album.genre == "Classical"}
             
-            # @album_categories = [
-            # {category: "Pop", albums: pop}, 
-            # {category: "Hip-hop", albums: hiphop}, 
-            # {category: "rock", albums: rock}, 
-            # {category: "Dance and Electronic", albums: electronic}, 
-            # {category: "Country", albums: country}, 
-            # {category: "Classical", albums: classical}, 
+            # hip_hop = albums.select {|album| album.genre == "Hip Hop"}
+            # rock = albums.select {|album| album.genre == "Rock"}
+            # randb = albums.select {|album| album.genre == "R&B"}
+            # pop = albums.select {|album| album.genre == "Pop"}
+
+            # @album_genres = [
+            # {genre: "Hip Hop", albums: hip_hop}, 
+            # {genre: "Rock", albums: rock}, 
+            # {genre: "R&B", albums: randb},
+            # {genre: "Pop", albums: pop}, 
             # ]
-  
 
 
         end
@@ -27,6 +21,9 @@ class AlbumsController < ApplicationController
 
         def show
             @album = Album.find(params[:id])
+            @message = Message.new 
+            @comment = Comment.new
+           
         end
 
 end

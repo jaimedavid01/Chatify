@@ -1,0 +1,11 @@
+<div class='index-container'>
+<% .each do |album|%>
+
+<div class='index-title'>
+<a href="<%= album_path(album) %>">
+<img class="index-img" src="<%= album.img_url %>" alt="<%= album.title%>">
+</a>
+
+</div>
+<% end %>
+</div>

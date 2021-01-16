@@ -1,22 +1,30 @@
-<div class='form-container'>
+
+<div class="parent2">
+<div class="div12">
+<div class="center">
+
   <% if flash[:error] %>
     <p><%= flash[:error] %></p>
   <% end %>
-  
+  <h1 style="color: #4CAF50;">Login to your Chatify Account</h1>
+  <div class='sessions-container'>
     <%= form_for :session, url: sessions_path do |f| %>
-      <div class='form-input'>
-        <%= f.label :username %>
-        <%= f.text_field :username %>
+      <div class='sessions-input'>
+        <p><%= f.label :username %></p>
+        <p><%= f.text_field :username %></p>
       </div>
 
 
-      <div class='form-input'>
-        <%= f.label :password %>
-        <%= f.text_field :password %>
+      <div class='sessions-input'>
+        <p><%= f.label :password %></p>
+        <p><%= f.password_field :password %></p>
       </div>
 
-      <%= f.submit "Login" , class: 'form-btn' %>
+      <%= f.submit "Login", class: 'sessions-btn' %>
       
     <% end %> 
 
+</div>
+</div>
+ </div>
 </div>

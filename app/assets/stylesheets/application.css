@@ -13,3 +13,351 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+
+
+ img {
+     width: 400px;
+     height: 400px;
+     border-radius: 8px;
+     box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 1)
+ }
+
+
+
+
+body {
+    font-family: Verdana, sans-serif;
+    font-size: 15px;
+    color: #646464;
+    /* background-color: rgb(252, 248, 241); */
+    /*background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/3d/Newback.jpg);*/
+    background-image: url(https://i.ibb.co/zb8tJx9/Little-background3.jpg);
+    /* background-color: rgb(255, 248, 241); */
+    /*background-repeat: no-repeat;
+    background-size:  2200px 800px;*/
+
+  }
+
+
+.mixed {
+    background-color: rgb(31, 117, 245);
+    padding: 10px;
+    width: 60%;
+    font-size: 15px;
+    border-radius: 12px;
+    box-shadow: 3px 3px 3px #8f8f8f;
+    margin: 3;
+ }
+
+ .negative {
+    background-color: rgb(194, 70, 62);
+    padding: 10px;
+    width: 60%;
+    font-size: 15px;
+    border-radius: 12px;
+    box-shadow: 3px 3px 3px #8f8f8f;
+    margin: 3;
+ }
+
+  .positive {
+    background-color: rgb(76, 161, 20);
+    padding: 10px;
+    width: 60%;
+    font-size: 15px;
+    border-radius: 12px;
+    box-shadow: 3px 3px 3px #8f8f8f;
+    margin: 3;
+    }
+
+
+    .index-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    z-index: -10;
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+
+  .index-container1 {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    z-index: -10;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+  
+   .index-tile {
+     margin: 15px 3px 0px 3px;
+     height: 300px;
+     /* border: 1px solid white; */
+    }
+    
+    .index-img {  
+      height: 100%; 
+      border-radius: 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 12px;
+      margin-left: 12px;
+    }
+
+
+    .index-img:hover {
+      transform: scale(1.10);
+      z-index: 1000;
+      overflow: visible;
+      transition: 1.5s;
+      box-shadow: 0px 0px 20px;
+    }
+
+    .submit {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 8px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer; 
+        border-radius: 10px;
+        width: 27%;
+        right: 200px;
+        position: absolute;
+
+    }
+
+    .submit2 {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 8px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer; 
+        border-radius: 10px;
+        width: 40%;
+
+    }
+
+    .submit3 {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 8px 32px;
+        text-decoration: none;
+        margin: 4px 3px;
+        cursor: pointer; 
+        border-radius: 10px;
+        width: 60%;
+
+    }
+
+   
+    .form {
+        width: 60%;
+    }
+
+    .title1 {
+        margin: 1px;
+        padding: 0;
+    }
+    .parent1 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      }
+      
+      .div11 { grid-area: 1 / 1 / 3 / 2; }
+      .div21 { grid-area: 3 / 1 / 4 / 2; }
+
+
+      .parent2 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        }
+        
+        .div12 { 
+          grid-area: 1 / 2 / 2 / 3; 
+          margin: auto;
+          width: 60%;
+          border: 0;
+          padding: 10px;
+          text-align: center;
+        }
+
+        .parent {
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          grid-template-rows: repeat(8, 1fr);
+          grid-column-gap: 0px;
+          grid-row-gap: 0px;
+          }
+          
+          .div1 { grid-area: 2 / 1 / 8 / 7; }
+
+
+          .parentlogo {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            }
+            
+            .divlogo { grid-area: 1 / 1 / 2 / 3; }
+
+      
+
+
+
+
+
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 100px; /* Set the width of the sidebar. Was at 100 */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    /* background-color: #111; Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    
+    /* border: solid; */
+    }
+
+
+.nav-tabs-right {
+    padding: 4px 4px 2px 16px;
+    text-decoration: none;
+    font-size: 12px;
+    color: #646464;
+    display: block;
+    /*transition: 0.3s;*/
+    list-style-type: none;
+    padding-right: 28px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    float: right; 
+    text-align: center;
+  }
+
+
+  /* a:link {
+    text-decoration: none;
+    color: #646464;
+  }
+  a:visited {
+    color: #646464;
+  } */
+  
+  .main {
+    margin-left: 100px; /*Same as the width of the sidenav */
+    /* font-size: 28px; Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+/*   
+ .sessions-container {
+
+
+}  */
+
+
+.sessions-input {
+    margin-top: 10px;
+   
+  }
+
+
+  .sessions-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 6px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer; 
+    border-radius: 10px;
+    width: 50%;
+ 
+  }
+
+  a:link {
+    text-decoration: none;
+    color: #646464;
+  }
+  a:visited {
+    color: #646464;
+  }
+
+
+  .profile-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 4px 4px;
+    text-decoration: none;
+    margin: 4px 1px;
+    cursor: pointer; 
+    border-radius: 10px;
+    width: 40%;
+ 
+  }
+/* 
+  .whatsapp-background {
+      background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b1/Little_background.jpg);
+      /* background-color: black; 
+  } */
+
+
+  .logo-pic {
+    height: 7%;
+    width: 7%;
+    bottom: 10px;
+    bottom: 10px;
+    left: 0px;
+    position: sticky;
+    -webkit-animation: spin 1s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+    animation: spin 3s linear infinite;
+  }
+
+
+  .logo-pic-text {
+    height: 24%;
+    width: 24%;
+    bottom: 10px;
+    left: 0px;
+    position: sticky;
+
+  }
+
+  @-webkit-keyframes spin{
+    100%{-webkit-transform: rotate(360deg);}
+  }
+  @-moz-keyframes spin{
+    100%{-webkit-transform: rotate(360deg);}
+  }
+  @keyframes spin{
+    100%{-webkit-transform: rotate(360deg);}
+  }
+
+  .footerlogo {
+    margin: auto;
+    width: 60%;
+    border: 0;
+    left: 0px;
+    padding: 10px;
+    text-align: left;
+  }

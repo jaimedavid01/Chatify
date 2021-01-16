@@ -1,4 +1,4 @@
 class Album < ApplicationRecord
-    has_many :forums
-    has_many :users, through: :forums
+    has_many :messages
+    has_many :users, through: :messages
 end

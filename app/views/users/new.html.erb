@@ -1,34 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+<div class="parent1">
+<div class="div11">
+
+
+<div class='sessions-container'>
+    <h1 style="color: #4CAF50;">Sign Up for your Chatify Account</h1>
+
 <% if flash[:errors] %>
   <% flash[:errors].each do |error| %>
-    <p><%= error %></p>
-  <% end %>
-<% end %>
-
-<div class='form-container'>
-    <h1>Create An Account on Chatify</h1>
+    <p style=" color: rgb(194, 70, 62);"><%= error %></p>
+     <% end %>
+    <% end %>
 
     <%= form_for @user do |f| %>
-        <div class='form-input'>
-            <%= f.label :name %>
+        <div class='sessions-input'>
+           <p> <%= f.label :name %></p>
             <%= f.text_field :name %>
         </div>
 
-        <div class='form-input'>
-            <%= f.label :age %>
+        <div class='sessions-input'>
+            <p><%= f.label :age %></p>
             <%= f.number_field :age %>
         </div>
 
-        <div class='form-input'>
-            <%= f.label :username %>
+        <div class='sessions-input'>
+            <p><%= f.label :username %></p>
             <%= f.text_field :username %>
         </div>
 
-        <div class='form-input'>
-            <%= f.label :password %>
-            <%= f.text_field :password %>
+        <div class='sessions-input'>
+            <p><%= f.label :password %></p>
+            <p><%= f.password_field :password %></p>
         </div>
 
-        <%= f.submit class: 'form-btn' %>
+        <%= f.submit "Create Account", :class => 'submit3' %>
     <% end %>
 
+    <div class="div21">
+
+
+    </div>
+
+    </div>
 </div>
+
+</div>
+</div>
+
+</body>
+</html>

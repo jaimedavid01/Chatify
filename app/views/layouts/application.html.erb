@@ -8,9 +8,57 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+     <style>
+  
+
+  </style>
   </head>
+ 
 
   <body>
+    <div class="sidenav">
+    <nav>
+        <ul>
+          
+
+          
+
+          <% if @current_user %>
+           <li class="nav-tabs-right"><%= link_to "All Albums", albums_path %></li>
+            <li class="nav-tabs-right"><%= link_to "Profile Page", user_path(@current_user) %></li>
+            <li class="nav-tabs-right"><%= link_to "Logout", logout_path, method: :delete %></li>
+
+          <% else %>
+            <li class="nav-tabs-right"><%= link_to "Sign Up", new_user_path %></li>
+            <li class="nav-tabs-right"><%= link_to "Login", new_session_path %></li>
+          <% end %>
+
+        </ul>
+
+      </nav>
+      </div>
+      <div class="main">
     <%= yield %>
+    </div>
+
+              
+
+
+
+    <div class="parentlogo">
+      <div class="divlogo"> 
+
+
+
+</div>
+</div>
+
+          <img class="logo-pic" style="box-shadow: 0px 0px 0px 0px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Chatify1.png/240px-Chatify1.png" alt="Chatify Logo">
+          <img class="logo-pic-text" style="box-shadow: 0px 0px 0px 0px" src="https://upload.wikimedia.org/wikipedia/commons/8/8f/ChatifyName.png" alt="Chatify Logo Text">
   </body>
+  <footer class="footerlogo">
+
+  </footer>
+  
 </html>

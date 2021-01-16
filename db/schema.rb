@@ -10,29 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_05_175656) do
+ActiveRecord::Schema.define(version: 2021_01_05_151744) do
 
   create_table "albums", force: :cascade do |t|
     t.string "title"
     t.integer "release_year"
     t.string "genre"
+    t.string "artist"
+    t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "img_url"
-    t.string "artist"
   end
 
-  create_table "forums", force: :cascade do |t|
-    t.integer "album_id"
+  create_table "comments", force: :cascade do |t|
+    t.integer "message_id"
     t.integer "user_id"
+    t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "messages", force: :cascade do |t|
-    t.text "comment"
+    t.text "content"
     t.string "mood"
-    t.integer "forum_id"
+    t.integer "user_id"
+    t.integer "album_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
