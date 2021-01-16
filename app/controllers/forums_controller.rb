@@ -8,7 +8,7 @@ class ForumsController < ApplicationController
     end
     
     def show
-        #byebug
+        byebug
         @forum = Forum.find(params[:id])
         #@course = Course.find(params[:course_id])
         #@album = Album.find(params[:id])
@@ -27,7 +27,7 @@ class ForumsController < ApplicationController
     private
 
     def forum_params
-        params.require(:forum).permit(:forum_id)
+        params.require(:forum).permit(:user_id, :album_id)
     end
     
 end
